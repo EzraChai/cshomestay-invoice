@@ -2,7 +2,7 @@ import { FaFileInvoice } from "react-icons/fa";
 
 export const Header = () => {
   return (
-    <header className="md:h-[50px]">
+    <header className="md:h-[50px] print:hidden">
       <div className=" bg-stone-900">
         <div className="wrapper px-4 py-2 md:py-3 md:px-8">
           <div className="inner-header relative z-[60] h-[50px] flex justify-between items-center">
