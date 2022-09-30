@@ -1,7 +1,7 @@
 import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
-import { Invoice } from "../components/Invoice";
+import { DisplayInvoice } from "../components/DisplayInvoice";
 
 export async function getServerSideProps(context: any) {
   try {
@@ -23,13 +23,13 @@ export default function Home({
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>C&S Homestay Invoice Generator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         {isConnected ? (
-          <Invoice />
+          <DisplayInvoice />
         ) : (
           <div className="flex justify-center items-center h-[50rem]">
             <div className="text-md font-medium">{errorMessage}</div>
