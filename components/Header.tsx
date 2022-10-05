@@ -1,4 +1,5 @@
 import { FaFileInvoice } from "react-icons/fa";
+import Auth from "./Auth";
 
 export const Header = () => {
   return (
@@ -11,6 +12,9 @@ export const Header = () => {
                 <FaFileInvoice />
               </div>
               <div className="text-stone-100">Cozy & Sweet.</div>
+            </div>
+            <div className="">
+              <Auth />
             </div>
           </div>
         </div>
