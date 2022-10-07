@@ -1,8 +1,5 @@
-import { useState } from "react";
-
-export const DisplayInvoice = () => {
-  const [data, setData] = useState({ day: null, price: null });
-
+export const DisplayInvoice = ({ data }: any) => {
+  console.log(data);
   return (
     <div className="grid grid-cols-4 max-w-5xl mx-auto mt-20">
       <div className="col-span-2">
@@ -28,28 +25,31 @@ export const DisplayInvoice = () => {
             </tr>
           </thead>
           <tbody className="text-center">
-            {/* Repeat here */}
             <tr>
               <td className="flex">
                 <table className="w-full mt-2">
-                  <tr>
-                    <td className="w-1/3 text-left font-semibold">
-                      Customer Name
-                    </td>
-                    <td className="w-2/3 text-left">Chai Seong Shih</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td className="w-1/3 text-left font-semibold">
+                        Customer Name
+                      </td>
+                      <td className="w-2/3 text-left">{data.customerName}</td>
+                    </tr>
+                  </tbody>
                 </table>
               </td>
               <td></td>
             </tr>
             <tr>
               <table className="w-full mt-2">
-                <tr>
-                  <td className="w-1/3 text-left font-semibold">Period</td>
-                  <td className="w-2/3 text-left">
-                    27/12/2022 - 28/12/2022 1 night(s)
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td className="w-1/3 text-left font-semibold">Period</td>
+                    <td className="w-2/3 text-left">
+                      {/* {data.day[0]} - {data.day[1]} {data.diffTime} night(s) */}
+                    </td>
+                  </tr>
+                </tbody>
               </table>
               <td></td>
               <td></td>
@@ -63,7 +63,7 @@ export const DisplayInvoice = () => {
                 </tr>
               </table>
               <td></td>
-              <td>300.00</td>
+              <td>{parseInt(data.pricePerDay).toFixed(2)}</td>
             </tr>
             <tr className="">
               <td></td>
@@ -76,7 +76,7 @@ export const DisplayInvoice = () => {
               <td>
                 <button
                   type="button"
-                  className="mt-10 transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-zinc-900 hover:bg-stone-600 text-white font-bold uppercase py-2 px-4 mr-1 rounded tracking-wider"
+                  className="mt-10 transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-zinc-900 hover:bg-stone-600 text-white font-bold py-2 px-4 mr-1 rounded tracking-wider"
                 >
                   Share
                 </button>

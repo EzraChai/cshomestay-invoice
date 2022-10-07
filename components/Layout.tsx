@@ -2,7 +2,7 @@ import { Header } from "./Header";
 
 export const Layout = ({ children }: any) => {
   return (
-    <div className="">
+    <div>
       <Header />
       {children}
     </div>

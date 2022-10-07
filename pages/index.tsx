@@ -3,10 +3,9 @@ import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
 import { useSession, signIn } from "next-auth/react";
 
-import { DisplayInvoice } from "../components/DisplayInvoice";
 import { InsertDataInvoice } from "../components/InsertDataInvoice";
 
-export async function getServerSideProps(context: any) {
+export async function getServerSideProps() {
   try {
     await clientPromise;
     return {
@@ -34,7 +33,6 @@ export default function Home({
 
         <main>
           {isConnected ? (
-            // <DisplayInvoice />
             <InsertDataInvoice />
           ) : (
             <div className="flex justify-center items-center h-[50rem]">

@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { DateRangePicker, DateRangePickerValue } from "@mantine/dates";
+import { DateRangePicker } from "@mantine/dates";
 
-export const BookHotelDatePicker = ({ value, setValue }: any) => {
+export const BookHotelDatePicker = ({ dateRange, setDateRange }: any) => {
   return (
     <DateRangePicker
+      required
       className="mt-4"
       label="Book hotel"
       radius="md"
-      size="md"
-      withAsterisk
+      size="xl"
       placeholder="Pick dates range"
-      value={value}
-      onChange={setValue}
+      value={dateRange}
+      onChange={setDateRange}
       firstDayOfWeek="sunday"
+      withAsterisk
     />
   );
 };
