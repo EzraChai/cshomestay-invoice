@@ -1,3 +1,6 @@
+import Image from "next/image";
+import logo from "../public/logo.jpeg";
+
 export const DisplayInvoice = ({ data }: any) => {
   console.log(data);
   return (
@@ -12,10 +15,8 @@ export const DisplayInvoice = ({ data }: any) => {
       </div>
       <div></div>
       <div className="flex flex-col items-center">
-        <div className="">logo</div>
-        <div className="text-center">
-          {" "}
-          <span className="font-semibold">Telephone </span> +6019 3099 359
+        <div className="">
+          <Image src={logo} alt="C&S Homestay's logo" />
         </div>
       </div>
       <div className=" col-span-4 mt-16">
